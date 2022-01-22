@@ -1,38 +1,8 @@
-package main
-
-import "fmt"
-
-func main() {
-	l1 := &ListNode{Val: 2}
-	add(l1, 4)
-	add(l1, 3)
-	l2 := &ListNode{Val: 5}
-	add(l2, 6)
-	add(l2, 4)
-	result := addTwoNumbers(l1, l2)
-	for {
-		fmt.Print(result.Val)
-		if result.Next == nil {
-			break
-		}
-		result = result.Next
-	}
-}
+package sum_add
 
 type ListNode struct {
 	Val  int
 	Next *ListNode
-}
-
-func add(ln *ListNode, num int) {
-	temp := ln
-	for {
-		if temp.Next == nil {
-			break
-		}
-		temp = ln.Next
-	}
-	temp.Next = &ListNode{Val: num}
 }
 
 func addTwoNumbers(l1, l2 *ListNode) *ListNode {
