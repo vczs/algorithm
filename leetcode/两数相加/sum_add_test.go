@@ -1,7 +1,6 @@
 package sum_add
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -24,7 +23,7 @@ func testSumAdd(t *testing.T) {
 	result := addTwoNumbers(l1, l2) // 调用我们两数相加的方法 并接收运算结果
 	// 打印结果
 	for {
-		fmt.Print(result.Val)
+		t.Log(result.Val)
 		if result.Next == nil {
 			break
 		}
