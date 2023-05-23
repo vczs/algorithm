@@ -1,2 +1,2 @@
 # algorithm
-go语言 算法
+golang算法
