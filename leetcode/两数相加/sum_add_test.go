@@ -15,13 +15,12 @@ func Test(t *testing.T) {
 // 测试两数相加
 func testSumAdd(t *testing.T) {
 	l1 := &ListNode{Val: 2}
-	add(l1, 4) // l1链表添加节点
+	add(l1, 4)
 	add(l1, 3)
 	l2 := &ListNode{Val: 5}
-	add(l2, 6) // l2链表添加节点
+	add(l2, 6)
 	add(l2, 4)
-	result := addTwoNumbers(l1, l2) // 调用我们两数相加的方法 并接收运算结果
-	// 打印结果
+	result := addTwoNumbers(l1, l2)
 	for {
 		t.Log(result.Val)
 		if result.Next == nil {

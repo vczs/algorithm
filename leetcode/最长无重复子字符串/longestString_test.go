@@ -9,19 +9,11 @@ func TestMain(m *testing.M) {
 }
 
 func Test(t *testing.T) {
-	t.Run("无重复最长子字符串方法1：", testLongestStringOne)
-	t.Run("无重复最长子字符串方法2：", testLongestStringTwo)
+	t.Run("无重复最长子字符串：", testLongestString)
 }
 
 // 测试testLongestStringOne方法
-func testLongestStringOne(t *testing.T) {
-	r := longestStringOne("abcabcbb")
-	t.Logf("方法1“abcabcbb”中无重复最长子字符串的长度是：%v", r)
-
-}
-
-// 测试testLongestStringTwo方法
-func testLongestStringTwo(t *testing.T) {
-	r := longestStringTwo("abcabcbb")
-	t.Logf("方法2“abcabcbb”中无重复最长子字符串的长度是：%v", r)
+func testLongestString(t *testing.T) {
+	r := longestString("dvdf")
+	t.Logf("“abcabcbb”中无重复最长子字符串的长度是：%v", r)
 }
