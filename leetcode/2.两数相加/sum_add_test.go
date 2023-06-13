@@ -14,20 +14,26 @@ func Test(t *testing.T) {
 
 // 测试两数相加
 func testSumAdd(t *testing.T) {
+	l1, l2 := createData()
+	res := sumAdd(l1, l2)
+	for {
+		t.Log(res.Val)
+		if res.Next == nil {
+			break
+		}
+		res = res.Next
+	}
+}
+
+// 构造用例
+func createData() (*ListNode, *ListNode) {
 	l1 := &ListNode{Val: 2}
 	add(l1, 4)
 	add(l1, 3)
 	l2 := &ListNode{Val: 5}
 	add(l2, 6)
 	add(l2, 4)
-	result := addTwoNumbers(l1, l2)
-	for {
-		t.Log(result.Val)
-		if result.Next == nil {
-			break
-		}
-		result = result.Next
-	}
+	return l1, l2
 }
 
 // 链表添加元素

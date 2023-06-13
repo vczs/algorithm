@@ -10,7 +10,7 @@ type ListNode struct {
 请将两个数相加，并以相同形式返回一个 表示和 的链表
 */
 
-func addTwoNumbers(l1, l2 *ListNode) *ListNode {
+func sumAdd(l1, l2 *ListNode) *ListNode {
 	var temp *ListNode
 	var result *ListNode
 	carry := 0

@@ -1,6 +1,6 @@
 package longest_string
 
-func longestString(s string) int {
+func lengthOfLongestSubstring(s string) int {
 	length := len(s)
 
 	m := map[byte]int{}
