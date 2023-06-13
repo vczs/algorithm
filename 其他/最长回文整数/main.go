@@ -28,36 +28,41 @@ import (
 */
 
 func main() {
-	num := "00009"
-	m1 := map[int]int{}
+	str := "00009"
 
-	slice := []int{}
+	// 将字符串中出现的数字添加到一个切片里
+	s := []int{}
+	// 将每个数字出现的次数存储到一个map里
+	m := map[int]int{}
 
-	for i := 0; i < len(num); i++ {
-		if _, ok := m1[int(num[i]-'0')]; !ok {
-			slice = append(slice, int(num[i]-'0'))
+	for i := 0; i < len(str); i++ {
+		if _, ok := m[int(str[i]-'0')]; !ok {
+			s = append(s, int(str[i]-'0'))
 		}
-		m1[int(num[i]-'0')]++
+		m[int(str[i]-'0')]++
 	}
 
-	sort.Sort(sort.IntSlice(slice))
+	sort.Sort(sort.IntSlice(s)) // 对切片里的数字进行排序
 
 	left := ""
-	right := ""
 	mid := ""
-	for i := len(slice) - 1; i >= 0; i-- {
-		k, _ := m1[slice[i]]
-		for j := 0; j < k/2; j++ {
-			if slice[i] == 0 && left == "" {
-				continue
-			}
-			left += strconv.Itoa(slice[i])
-			right = strconv.Itoa(slice[i]) + right
+	right := ""
+
+	for _, v := range s {
+		if left == "" && v == 0 {
+			continue
 		}
-		if mid == "" && k%2 != 0 {
-			mid = strconv.Itoa(slice[i])
+		repeat := m[v]
+		for i := 0; i < repeat/2; i++ {
+			left = left + strconv.Itoa(v)
+			right = strconv.Itoa(v) + right
+		}
+		if mid == "" && repeat%2 != 0 {
+			mid = strconv.Itoa(v)
 		}
 	}
+
 	end := left + mid + right
+
 	fmt.Println(end)
 }
